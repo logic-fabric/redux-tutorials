@@ -5,48 +5,50 @@
 }
 
 .row > button {
-  margin-left: 4px;
-  margin-right: 8px;
+  margin: 0 0.5rem 0 0.25rem;
 }
+
 .row:not(:last-child) {
-  margin-bottom: 16px;
+  margin: 0 0 1rem 0;
 }
 
 .value {
-  font-size: 78px;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-top: 2px;
-  font-family: 'Courier New', Courier, monospace;
+  margin: 0.125rem 0 0 0;
+  padding: 0 1rem;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 4rem;
 }
 
 .button {
+  padding: 0 0.75rem 0.25rem 0.75rem;
+  border: 0.125rem solid transparent;
+  border-radius: 0.125rem;
+  outline: none;
+
+  color: rgb(112, 76, 182);
+  font-size: 2rem;
+
   appearance: none;
   background: none;
-  font-size: 32px;
-  padding-left: 12px;
-  padding-right: 12px;
-  outline: none;
-  border: 2px solid transparent;
-  color: rgb(112, 76, 182);
-  padding-bottom: 4px;
-  cursor: pointer;
   background-color: rgba(112, 76, 182, 0.1);
-  border-radius: 2px;
+
+  cursor: pointer;
   transition: all 0.15s;
 }
 
 .textbox {
-  font-size: 32px;
-  padding: 2px;
-  width: 64px;
+  width: 4rem;
+  margin: 0 0.25rem 0 0;
+  padding: 0.125rem;
+
+  font-size: 2rem;
   text-align: center;
-  margin-right: 4px;
 }
 
 .button:hover,
 .button:focus {
-  border: 2px solid rgba(112, 76, 182, 0.4);
+  border: 0.125rem solid rgba(112, 76, 182, 0.4);
 }
 
 .button:active {
@@ -54,25 +56,31 @@
 }
 
 .asyncButton {
-  composes: button;
   position: relative;
+
+  composes: button;
 }
 
-.asyncButton:after {
-  content: '';
-  background-color: rgba(112, 76, 182, 0.15);
+.asyncButton::after {
   display: block;
   position: absolute;
+  top: 0;
+  left: 0;
+
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
+
+  background-color: rgba(112, 76, 182, 0.15);
   opacity: 0;
-  transition: width 1s linear, opacity 0.5s ease 1s;
+
+  content: "";
+  transition: width 1000ms linear, opacity 500ms ease 1000ms;
 }
 
-.asyncButton:active:after {
-  width: 0%;
+.asyncButton:active::after {
+  width: 0;
+
   opacity: 1;
-  transition: 0s;
+
+  transition: 0ms;
 }
