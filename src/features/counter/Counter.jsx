@@ -35,12 +35,14 @@ export function Counter() {
 
       <div className="counter__row">
         <input
+          className="counter__input"
           value={incrementStep}
           label-aria="Fixer le pas d'incrémentation"
           onChange={(e) => setIncrementStep(e.target.value)}
         />
 
         <button
+          className="counter__btn"
           aria-label="Incrémenter par pas"
           onClick={() => dispatch(incrementByStep(+incrementStep || 0))}
         >

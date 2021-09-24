@@ -8,18 +8,49 @@
   font-size: 5rem;
 }
 
-.counter__btn {
+.counter__btn,
+.counter__input {
   margin: 0 2rem;
-  padding: 0.5rem 2rem;
-  border: none;
+  border: 0.125rem solid transparent;
+  outline: none;
+
   border-radius: 0.5rem;
 
-  color: white;
   font-size: 2rem;
+}
+
+.counter__btn {
+  padding: 0.5rem 2rem;
+
+  color: white;
 
   background: purple;
 
   cursor: pointer;
+}
+
+.counter__input {
+  width: 16rem;
+  padding: 0.5rem 1rem;
+  border: 0.25rem solid purple;
+
+  color: indigo;
+  text-align: center;
+
+  transition: all 350ms;
+}
+
+.counter__btn:focus,
+.counter__input:focus {
+  border-color: plum;
+}
+
+.counter__input:focus {
+  background:lavenderblush;
+}
+
+.counter__btn:hover {
+  background: indigo;
 }
 
 .counter__value {
