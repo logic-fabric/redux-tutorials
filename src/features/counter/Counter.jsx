@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { decrement, increment, incrementByStep } from "./counterSlice";
+import {
+  decrement,
+  increment,
+  incrementAsyncByStep,
+  incrementByStep,
+} from "./counterSlice";
 
 import "./Counter.css";
 
@@ -43,10 +48,18 @@ export function Counter() {
 
         <button
           className="counter__btn"
-          aria-label="Incrémenter par pas"
           onClick={() => dispatch(incrementByStep(+incrementStep || 0))}
         >
           incrémenter d'un pas
+        </button>
+      </div>
+
+      <div className="counter__row">
+        <button
+          className="counter__btn"
+          onClick={() => dispatch(incrementAsyncByStep(+incrementStep || 0))}
+        >
+          incrémenter de manière asynchrone
         </button>
       </div>
     </div>
